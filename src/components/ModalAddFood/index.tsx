@@ -37,27 +37,23 @@ function ModalAddFood({ setIsOpen, isOpen, handleAddFood }: ModalAddFoodProps) {
         <Input
           name="image"
           placeholder="Cole o link aqui"
-          value={image}
           handleInputChange={(e) => setImage(e.target.value)}
         />
 
         <Input
           name="name"
           placeholder="Ex: Moda Italiana"
-          value={name}
           handleInputChange={(e) => setName(e.target.value)}
         />
         <Input
           name="price"
           placeholder="Ex: 19.90"
-          value={price}
           handleInputChange={(e) => setPrice(Number(e.target.value))}
         />
 
         <Input
           name="description"
           placeholder="Descrição"
-          value={description}
           handleInputChange={(e) => setDescription(e.target.value)}
         />
         <button type="submit" data-testid="add-food-button">

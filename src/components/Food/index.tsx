@@ -28,9 +28,6 @@ function Food({ food, handleDelete, handleEditFood }: FoodProps) {
     setAvailable(!isAvailable);
   }
 
-  function setEditingFood() {
-    handleEditFood(food);
-  }
 
   return (
     <Container available={isAvailable}>
@@ -49,7 +46,7 @@ function Food({ food, handleDelete, handleEditFood }: FoodProps) {
           <button
             type="button"
             className="icon"
-            onClick={setEditingFood}
+            onClick={() => handleEditFood(food)}
             data-testid={`edit-food-${food.id}`}
           >
             <FiEdit3 size={20} />
@@ -73,7 +70,7 @@ function Food({ food, handleDelete, handleEditFood }: FoodProps) {
               id={`available-switch-${food.id}`}
               type="checkbox"
               checked={isAvailable}
-              onChange={toggleAvailable}
+              onChange={() => toggleAvailable()}
               data-testid={`change-status-food-${food.id}`}
             />
             <span className="slider" />

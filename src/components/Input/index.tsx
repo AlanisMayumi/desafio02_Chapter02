@@ -8,11 +8,10 @@ interface InputProps {
   name: string;
   icon?: IconType;
   placeholder: string;
-  value: string | number;
   handleInputChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
-const Input = ({ name, icon: Icon, value, handleInputChange, placeholder, ...rest }: InputProps) => {
+const Input = ({ name, icon: Icon, handleInputChange, placeholder }: InputProps) => {
   const inputRef = useRef(null);
 
   const [isFocused, setIsFocused] = useState(false);
@@ -48,7 +47,6 @@ const Input = ({ name, icon: Icon, value, handleInputChange, placeholder, ...res
         onChange={(e) => handleInputChange(e)}
         defaultValue={defaultValue}
         ref={inputRef}
-        // value={value}
         placeholder={placeholder}
       />
     </Container>
